@@ -45,4 +45,12 @@
     <?php if (option('debug') === false): ?>
         <script defer data-domain="dominikhofer.me" src="https://analytics.linea.studio/js/script.js"></script>
     <?php endif ?>
+
+    <!-- CSS -->
+    <?= css([
+        'assets/css/fonts.css',
+        'assets/css/reset.css',
+        'assets/css/styles.css',
+        '@auto'
+    ]) ?>
 </head>
