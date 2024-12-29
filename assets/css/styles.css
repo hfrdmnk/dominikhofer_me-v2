@@ -38,7 +38,7 @@ Site Styles
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: rgb(13, 9, 44);
+    --bg: rgb(22, 20, 33);
     --bg-secondary: rgb(32, 27, 75);
     --headings: rgb(238, 241, 255);
     --text: rgb(199, 208, 254);
