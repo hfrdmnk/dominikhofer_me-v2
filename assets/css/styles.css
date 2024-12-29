@@ -22,6 +22,10 @@ Site Styles
   --fs-xxl: clamp(2.44rem, 2.02vi + 1.94rem, 3.55rem);
   --fs-xxxl: clamp(3.05rem, 3.06vi + 2.29rem, 4.73rem);
 
+  /* Layout */
+  --container-padding: 1rem;
+  --container-max-width: 40rem;
+
   /* Colors */
   --bg: rgb(254, 255, 253);
   --bg-secondary: rgb(243, 250, 242);
@@ -67,6 +71,10 @@ Site Styles
   font-family: var(--monospace);
 }
 
+.meta {
+  color: var(--text-secondary);
+}
+
 /* Misc */
 ::selection {
   background-color: var(--accent);
@@ -82,8 +90,9 @@ body {
   background-color: var(--bg);
   font-family: var(--sans-serif);
   font-weight: 300;
-  line-height: 1.75;
+  line-height: 1.5;
   color: var(--text);
+  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -103,6 +112,7 @@ h6,
   font-weight: 600;
   line-height: 1.25;
   color: var(--headings);
+  margin: 0;
 }
 
 h1,
@@ -141,3 +151,42 @@ h5,
 .text-sm {
   font-size: var(--fs-sm);
 }
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Modified from:  https://dannyguo.medium.com/animated-multiline-link-underlines-with-css-abe07f3d6aee */
+a:not(.no-highlight, :has(svg), :has(img)) {
+  background-position: 0% 100%;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background 0.3s ease-in-out,
+    text-decoration-color 0.1s ease-in-out;
+}
+
+a:not(nav a),
+.prose a {
+  font-weight: 400;
+  color: var(--text);
+  text-decoration-style: wavy;
+  text-decoration-color: var(--text-secondary);
+  text-underline-offset: 4px;
+}
+
+a:hover,
+a:focus,
+nav a.is-active {
+  background-size: 100% 100%;
+  text-decoration-color: transparent;
+}
+
+.prose.no-highlight a:hover,
+.prose.no-highlight a:focus {
+  background-size: 0% 100%;
+}
+
+/* Components */
