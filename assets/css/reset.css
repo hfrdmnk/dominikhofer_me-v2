@@ -1,6 +1,6 @@
 /***
 A (more) Modern CSS Reset
-https://piccalil.li/blog/a-more-modern-css-reset/
+Adapted from https://piccalil.li/blog/a-more-modern-css-reset/
 ***/
 
 /* Box sizing rules */
@@ -23,12 +23,14 @@ h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 p,
 figure,
 blockquote,
 dl,
 dd {
-  margin-block-end: 0;
+  margin: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -41,6 +43,8 @@ ol[role="list"] {
 body {
   min-height: 100vh;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -48,6 +52,11 @@ h1,
 h2,
 h3,
 h4,
+h5,
+h6 {
+  line-height: 1.25;
+}
+
 button,
 input,
 label {
@@ -58,7 +67,9 @@ label {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 
@@ -73,6 +84,7 @@ img,
 picture {
   max-width: 100%;
   display: block;
+  user-select: none;
 }
 
 /* Inherit fonts for inputs and buttons */

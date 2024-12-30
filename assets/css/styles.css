@@ -13,18 +13,19 @@ Site Styles
     "Liberation Mono", "Courier New", monospace;
 
   /* Type scale */
-  /* https://www.fluid-type-scale.com/calculate?minFontSize=16&minWidth=400&minRatio=1.25&maxFontSize=18&maxWidth=1280&maxRatio=1.333&steps=sm,base,md,lg,xl,xxl,xxxl&baseStep=base&prefix=fs&useContainerWidth=false&includeFallbacks=false&useRems=true&remValue=16&decimals=2&previewFont=Inter&previewText=Almost+before+we+knew+it,+we+had+left+the+ground&previewWidth=1280 */
-  --fs-sm: clamp(0.8rem, 0.08vi + 0.78rem, 0.84rem);
-  --fs-base: clamp(1rem, 0.23vi + 0.94rem, 1.13rem);
-  --fs-md: clamp(1.25rem, 0.45vi + 1.14rem, 1.5rem);
-  --fs-lg: clamp(1.56rem, 0.79vi + 1.36rem, 2rem);
-  --fs-xl: clamp(1.95rem, 1.29vi + 1.63rem, 2.66rem);
-  --fs-xxl: clamp(2.44rem, 2.02vi + 1.94rem, 3.55rem);
-  --fs-xxxl: clamp(3.05rem, 3.06vi + 2.29rem, 4.73rem);
+  /* https://www.fluid-type-scale.com/calculate?minFontSize=16&minWidth=400&minRatio=1.125&maxFontSize=18&maxWidth=1280&maxRatio=1.25&steps=sm,base,md,lg,xl,xxl,xxxl&baseStep=base&prefix=text&useContainerWidth=false&includeFallbacks=false&useRems=true&remValue=16&decimals=2&previewFont=Inter&previewText=Almost+before+we+knew+it,+we+had+left+the+ground&previewWidth=1280 */
+  --text-sm: clamp(0.89rem, 0.02vi + 0.88rem, 0.9rem);
+  --text-base: clamp(1rem, 0.23vi + 0.94rem, 1.13rem);
+  --text-md: clamp(1.13rem, 0.51vi + 1rem, 1.41rem);
+  --text-lg: clamp(1.27rem, 0.89vi + 1.04rem, 1.76rem);
+  --text-xl: clamp(1.42rem, 1.41vi + 1.07rem, 2.2rem);
+  --text-xxl: clamp(1.6rem, 2.08vi + 1.08rem, 2.75rem);
+  --text-xxxl: clamp(1.8rem, 2.97vi + 1.06rem, 3.43rem);
 
   /* Layout */
-  --container-padding: 1rem;
+  --default-spacing: 1rem;
   --container-max-width: 40rem;
+  --container-lg-max-width: calc(var(--container-max-width) * 2);
 
   /* Colors */
   --bg: #fafaf9;
@@ -34,6 +35,7 @@ Site Styles
   --text-secondary: #78716c;
   --border: #e7e5e4;
   --accent: #94f160;
+  --mix-color: #000;
 }
 
 /* Dark mode */
@@ -43,9 +45,10 @@ Site Styles
     --bg-secondary: #111827;
     --headings: #f3f4f6;
     --text: #d1d5db;
-    --text-secondary: ##838a98;
+    --text-secondary: #838a98;
     --border: #1f2937;
     --accent: #2a2ad1;
+    --mix-color: #fff;
   }
 }
 
@@ -77,14 +80,34 @@ Site Styles
   color: var(--text-secondary);
 }
 
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-gap-1 {
+  gap: 0.5rem;
+}
+
+.flex-gap-2 {
+  gap: 1rem;
+}
+
+.flex-gap-3 {
+  gap: 1.5rem;
+}
+
+.flex-gap-4 {
+  gap: 2rem;
+}
+
 /* Misc */
 ::selection {
   background-color: var(--accent);
-  color: var(--bg);
-}
-
-img {
-  user-select: none;
+  color: color-mix(in srgb, var(--accent), var(--mix-color) 60%);
 }
 
 /* Base styles */
@@ -92,11 +115,7 @@ body {
   background-color: var(--bg);
   font-family: var(--sans-serif);
   font-weight: 300;
-  line-height: 1.5;
   color: var(--text);
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -111,8 +130,7 @@ h5,
 .h5,
 h6,
 .h6 {
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 500;
   color: var(--headings);
   margin: 0;
 }
@@ -120,44 +138,47 @@ h6,
 h1,
 .h1 {
   font-family: var(--serif);
-  font-size: var(--fs-xxl);
+  font-size: var(--text-xxl);
   font-weight: 700;
 }
 
 h2,
 .h2 {
-  font-size: var(--fs-xl);
+  font-size: var(--text-xl);
 }
 
 h3,
 .h3 {
-  font-size: var(--fs-lg);
+  font-size: var(--text-lg);
 }
 
 h4,
 .h4 {
-  font-size: var(--fs-md);
-  font-weight: 500;
+  font-size: var(--text-md);
 }
 
 h5,
 .h5 {
-  font-size: var(--fs-base);
-  font-weight: 500;
+  font-size: var(--text-base);
 }
 
 .text-lg {
-  font-size: var(--fs-md);
+  font-size: var(--text-md);
 }
 
 .text-sm {
-  font-size: var(--fs-sm);
+  font-size: var(--text-sm);
 }
 
 .container {
+  width: 100%;
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 var(--container-padding);
+  padding: 0 2rem;
+}
+
+.container-lg {
+  max-width: var(--container-lg-max-width);
 }
 
 /* Modified from:  https://dannyguo.medium.com/animated-multiline-link-underlines-with-css-abe07f3d6aee */
@@ -171,11 +192,14 @@ a:not(.no-highlight, :has(svg), :has(img)) {
 }
 
 a:not(nav a),
-.prose a {
+.rt a {
   font-weight: 400;
-  color: var(--text);
-  text-decoration-style: wavy;
-  text-decoration-color: var(--text-secondary);
+  text-decoration-style: border;
+  text-decoration-color: color-mix(
+    in srgb,
+    var(--border),
+    var(--mix-color) 10%
+  );
   text-underline-offset: 4px;
 }
 
@@ -186,9 +210,110 @@ nav a.is-active {
   text-decoration-color: transparent;
 }
 
-.prose.no-highlight a:hover,
-.prose.no-highlight a:focus {
+.rt.no-highlight a:hover,
+.rt.no-highlight a:focus {
   background-size: 0% 100%;
 }
 
+/* Rich text */
+
+.rt > * + * {
+  margin-top: 2.5rem;
+}
+
+.rt h2 + *,
+.rt h3 + *,
+.rt h4 + *,
+.rt h5 + *,
+.rt h6 + * {
+  margin-top: 1.5rem;
+}
+
+.rt h2,
+.rt .h2 {
+  margin-top: 2rem;
+}
+
+.rt h3,
+.rt .h3 {
+  margin-top: 1.5rem;
+}
+
+.rt ul > li + li,
+.rt ol > li + li {
+  margin-top: 0.5rem;
+}
+
+.rt figure {
+  margin-top: 2rem;
+}
+
+.rt figure + figure {
+  margin-top: 3rem;
+}
+
+/* Layout */
+
 /* Components */
+
+figure {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  background-color: var(--bg-secondary);
+  padding: 1.5rem;
+}
+
+@media screen and (min-width: 60rem) {
+  figure {
+    margin-left: -4rem;
+    margin-right: -4rem;
+  }
+}
+
+figure::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1rem;
+  bottom: -1rem;
+  border: 1px solid var(--border);
+  border-top: 0;
+  border-bottom: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+figure::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -1rem;
+  right: -1rem;
+  top: 0;
+  bottom: 0;
+  border: 1px solid var(--border);
+  border-left: 0;
+  border-right: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+figure img {
+  border-radius: 0.5rem;
+  max-height: 40rem;
+  width: auto;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+figure figcaption {
+  font-family: var(--monospace);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
