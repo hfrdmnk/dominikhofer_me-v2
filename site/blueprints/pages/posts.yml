@@ -1,0 +1,30 @@
+title: Posts
+icon: 📚
+
+tabs:
+  page:
+    extends: pages/default
+  posts:
+    label: Post
+    icon: 📖
+    columns:
+      left:
+        width: 1/2
+        sections:
+          drafts:
+            extends: sections/posts
+            label: Drafts
+            status: draft
+
+          unlisted:
+            extends: sections/posts
+            label: In Review
+            status: unlisted
+
+      right:
+        width: 1/2
+        sections:
+          listed:
+            extends: sections/posts
+            label: Published
+            status: listed

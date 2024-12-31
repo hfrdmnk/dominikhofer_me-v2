@@ -1,3 +1,10 @@
+<?php
+// site/templates/default.php
+
+/** @var Kirby\CMS\Page $page */
+/** @var Kirby\CMS\Site $site */
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

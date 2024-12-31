@@ -1,6 +1,11 @@
 <?php
 
 return [
+    'debug' => str_ends_with($_SERVER['SERVER_NAME'] ?? '', '.test') || @$_SERVER['SERVER_NAME'] === 'localhost', // enable debug for domains that end on ".test"
+    'analytics' => [
+        'domain' => 'dominikhofer.me',
+        'script' => 'https://analytics.linea.studio/js/script.js'
+    ],
     'routes' => [
         [
             // this enables top level blog posts
@@ -15,7 +20,7 @@ return [
                     go($page);
                 }
                 // fall back to next route (alternatively, go directly to error page)
-                $this->next();
+                return $this->next();
             }
         ],
         [
@@ -35,10 +40,8 @@ return [
         ],
         [
             'pattern' => 'sitemap',
-            'action'  => function () {
-                return go('sitemap.xml', 301);
-            }
+            'action'  => fn() => go('sitemap.xml', 301)
         ]
     ],
-    'sitemap.ignore' => ['error']
+    'sitemap.ignore' => ['error'],
 ];

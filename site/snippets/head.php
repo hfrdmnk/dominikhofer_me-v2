@@ -1,3 +1,10 @@
+<?php
+// site/snippets/head.php
+
+/** @var Kirby\CMS\Page $page */
+/** @var Kirby\CMS\Site $site */
+?>
+
 <head>
     <!-- Global Metadata -->
     <meta charset="utf-8" />
@@ -9,33 +16,33 @@
     <link rel="canonical" href="<?= $page->url() ?>" />
 
     <!-- Primary Meta Tags -->
-    <title><?= ($page->h1()->isNotEmpty() ? $page->h1() : $page->title()) . ' | ' . $site->short_title() ?></title>
-    <meta name="title" content="<?= ($page->h1()->isNotEmpty() ? $page->h1() : $page->title()) . ' | ' . $site->short_title() ?>" />
+    <title><?= ($page->seoTitle()->isNotEmpty() ? $page->seoTitle() : ($page->h1()->isNotEmpty() ? $page->h1() : $page->title())) . ' | ' . $site->shortTitle() ?></title>
+    <meta name="title" content="<?= ($page->seoTitle()->isNotEmpty() ? $page->seoTitle() : ($page->h1()->isNotEmpty() ? $page->h1() : $page->title())) . ' | ' . $site->shortTitle() ?>" />
     <meta name="description" content="<?= $page->description() ?>" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<?= $page->url() ?>" />
-    <meta property="og:title" content="<?= ($page->h1()->isNotEmpty() ? $page->h1() : $page->title()) . ' | ' . $site->short_title() ?>" />
+    <meta property="og:title" content="<?= ($page->seoTitle()->isNotEmpty() ? $page->seoTitle() : ($page->h1()->isNotEmpty() ? $page->h1() : $page->title())) . ' | ' . $site->shortTitle() ?>" />
     <meta property="og:description" content="<?= $page->description() ?>" />
     <meta property="og:image" content="<?= $page->url() ?>/og-image" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="<?= $page->url() ?>" />
-    <meta property="twitter:title" content="<?= ($page->h1()->isNotEmpty() ? $page->h1() : $page->title()) . ' | ' . $site->short_title() ?>" />
+    <meta property="twitter:title" content="<?= ($page->seoTitle()->isNotEmpty() ? $page->seoTitle() : ($page->h1()->isNotEmpty() ? $page->h1() : $page->title())) . ' | ' . $site->shortTitle() ?>" />
     <meta property="twitter:description" content="<?= $page->description() ?>" />
     <meta property="twitter:image" content="<?= $page->url() ?>/og-image" />
 
     <!-- Mastodon Author Tag -->
-    <meta name="fediverse:creator" content="<?= $site->mastodon_user() ?>" />
+    <meta name="fediverse:creator" content="<?= $site->mastodonUser() ?>" />
 
     <!-- RSS Feeds -->
     <!-- Posts -->
     <link
         rel="alternate"
         type="application/rss+xml"
-        title="All Posts | <?= $site->title() ?>"
+        title="<?= $site->title() ?> | All Posts"
         href="<?= $site->url() ?>/rss.xml" />
 
     <!-- Sitemap -->
@@ -43,7 +50,7 @@
 
     <!-- Plausible Analytics -->
     <?php if (option('debug') === false): ?>
-        <script defer data-domain="dominikhofer.me" src="https://analytics.linea.studio/js/script.js"></script>
+        <script defer data-domain="<?= option('analytics.domain') ?>" src="<?= option('analytics.script') ?>"></script>
     <?php endif ?>
 
     <!-- CSS -->
