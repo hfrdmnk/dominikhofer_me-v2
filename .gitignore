@@ -22,6 +22,11 @@ Icon
 /.vscode
 /.idea
 
+# Vendors
+# ---------------
+/kirby
+/vendor
+
 # -------------SECURITY-------------
 # NEVER publish these files via Git!
 # -------------SECURITY-------------

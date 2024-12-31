@@ -194,7 +194,7 @@ a:not(.no-highlight, :has(svg), :has(img)) {
 a:not(nav a),
 .rt a {
   font-weight: 400;
-  text-decoration-style: border;
+  text-decoration-style: solid;
   text-decoration-color: color-mix(
     in srgb,
     var(--border),
