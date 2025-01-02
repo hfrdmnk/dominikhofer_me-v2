@@ -2,16 +2,12 @@
 
 return [
     'debug' => str_ends_with($_SERVER['SERVER_NAME'] ?? '', '.test') || @$_SERVER['SERVER_NAME'] === 'localhost', // enable debug for domains that end on ".test"
-    'analytics' => [
-        'domain' => 'dominikhofer.me',
-        'script' => 'https://analytics.linea.studio/js/script.js'
-    ],
     'routes' => [
         [
             // this enables top level blog posts
-            'pattern'  => '(:any)',
+            'pattern' => '(:any)',
             'language' => '*',
-            'action'   => function ($slug) {
+            'action' => function ($slug) {
                 // try and find a first level page with the given slug
                 if ($page = page($slug)) {
                     return $page;
@@ -20,12 +16,12 @@ return [
                     go($page);
                 }
                 // fall back to next route (alternatively, go directly to error page)
-                return $this->next();
+                $this->next();
             }
         ],
         [
             'pattern' => 'sitemap.xml',
-            'action'  => function () {
+            'action' => function () {
                 $pages = site()->pages()->index();
 
                 // fetch the pages to ignore from the config settings,
@@ -40,7 +36,9 @@ return [
         ],
         [
             'pattern' => 'sitemap',
-            'action'  => fn() => go('sitemap.xml', 301)
+            'action' => function () {
+                return go('sitemap.xml', 301);
+            }
         ]
     ],
     'sitemap.ignore' => ['error'],
