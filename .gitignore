@@ -22,6 +22,10 @@ Icon
 # /.vscode
 /.idea
 
+# Content
+# ---------------
+/content
+
 # Vendors
 # ---------------
 /kirby

@@ -1,5 +1,0 @@
-Title: dominikhofer.me
-----
-Shorttitle: DH
-----
-Mastodonuser: @dominik@mastodon.design
