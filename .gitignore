@@ -19,7 +19,7 @@ Icon
 # (sensitive workspace files)
 # ---------------------------
 *.sublime-workspace
-/.vscode
+# /.vscode
 /.idea
 
 # Vendors
