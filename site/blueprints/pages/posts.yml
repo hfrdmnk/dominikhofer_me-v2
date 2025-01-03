@@ -1,30 +1,28 @@
 title: Posts
-icon: 📚
 
 tabs:
-  page:
-    extends: pages/default
-  posts:
-    label: Post
-    icon: 📖
-    columns:
-      left:
-        width: 1/2
-        sections:
-          drafts:
-            extends: sections/posts
-            label: Drafts
-            status: draft
+    page:
+        extends: pages/default
+    posts:
+        label: Post
+        columns:
+            left:
+                width: 1/2
+                sections:
+                    drafts:
+                        extends: sections/posts
+                        label: Drafts
+                        status: draft
 
-          unlisted:
-            extends: sections/posts
-            label: In Review
-            status: unlisted
+                    unlisted:
+                        extends: sections/posts
+                        label: Hidden
+                        status: unlisted
 
-      right:
-        width: 1/2
-        sections:
-          listed:
-            extends: sections/posts
-            label: Published
-            status: listed
+            right:
+                width: 1/2
+                sections:
+                    listed:
+                        extends: sections/posts
+                        label: Published
+                        status: listed

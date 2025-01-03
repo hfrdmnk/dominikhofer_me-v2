@@ -1,0 +1,12 @@
+title: OPML File
+
+accept:
+    - application/xml
+    - text/x-opml
+    - text/xml
+
+options:
+    changeName: false
+    replace: true
+
+name: feeds.opml

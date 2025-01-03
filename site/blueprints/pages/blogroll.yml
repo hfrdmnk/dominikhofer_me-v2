@@ -1,0 +1,15 @@
+title: Blogroll
+
+tabs:
+    page:
+        extends: pages/default
+    feeds:
+        label: Feeds
+        sections:
+            opml:
+                type: files
+                label: OPML File
+                template: opml
+                max: 1
+                empty: No OPML file uploaded yet
+                help: Upload your OPML file containing your blog subscriptions.

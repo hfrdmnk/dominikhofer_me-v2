@@ -1,37 +1,32 @@
 title: Default Page
-icon: 📄
 
 columns:
-  main:
-    width: 2/3
-    fields:
-      pageContent:
-        label: Page Content
-        type: headline
-      h1:
-        type: text
-      lead:
-        type: writer
-      content:
-        type: blocks
+    main:
+        width: 2/3
+        fields:
+            h1:
+                type: text
+            lead:
+                type: writer
+            content:
+                type: blocks
 
-  sidebar:
-    width: 1/3
-    fields:
-      pageMeta:
-        label: Page Meta
-        type: headline
-      seoTitle:
-        label: SEO Title
-        type: text
-        help: Used for the page title. Not required, will fall back to the H1.
-      description:
-        type: textarea
-        buttons: false
-      visual:
-        type: files
-        multiple: false
-      related:
-        type: pages
-        help: Use for related slash pages
-
+    sidebar:
+        width: 1/3
+        fields:
+            metattitle:
+                label: Meta Title
+                type: text
+                help: Used for the page title. Not required, will fall back to the H1.
+            description:
+                type: textarea
+                buttons: false
+            visual:
+                type: files
+                multiple: false
+            showupdated:
+                label: Show Updated Date
+                type: toggle
+            related:
+                type: pages
+                help: Use for related slash pages.
