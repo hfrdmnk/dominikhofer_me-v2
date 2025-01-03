@@ -1,0 +1,14 @@
+title: Image
+
+accept: image/jpeg, image/png
+
+fields:
+    alt:
+        label: Alt Text
+        type: text
+        width: 1/2
+        required: true
+
+    caption:
+        type: text
+        width: 1/2

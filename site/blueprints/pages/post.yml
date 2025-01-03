@@ -15,14 +15,27 @@ status:
 columns:
     main:
         width: 2/3
-        fields:
+        sections:
             content:
-                type: textarea
-                buttons:
-                    - file
-                files: page.images
-                uploads: textarea-upload
-                required: true
+                type: fields
+                fields:
+                    content:
+                        type: textarea
+                        buttons:
+                            - file
+                        files: page.images
+                        uploads: false
+                        required: true
+            images:
+                type: files
+                multiple: true
+                layout: table
+                template: image
+                query: page.images
+                empty: No images attached yet.
+                columns:
+                    alt: true
+                    caption: true
 
     sidebar:
         width: 1/3

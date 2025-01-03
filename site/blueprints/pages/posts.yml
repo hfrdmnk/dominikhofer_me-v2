@@ -4,7 +4,7 @@ tabs:
     page:
         extends: pages/default
     posts:
-        label: Post
+        label: Posts
         columns:
             left:
                 width: 1/2

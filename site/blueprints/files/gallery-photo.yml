@@ -1,0 +1,12 @@
+title: Gallery Photo
+
+accept: image/jpeg, image/png
+
+fields:
+    date:
+        type: date
+        default: now
+        required: true
+    location:
+        type: text
+        required: true
