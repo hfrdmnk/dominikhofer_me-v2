@@ -1,5 +1,5 @@
 /***
-Site Styles
+Base Styles
 ***/
 
 /* CSS variables */
@@ -63,46 +63,6 @@ Site Styles
 	clip: rect(0 0 0 0); /* Legacy property for Internet Explorer */
 	clip-path: inset(50%);
 	white-space: nowrap;
-}
-
-.font-sans {
-	font-family: var(--sans-serif);
-}
-
-.font-serif {
-	font-family: var(--serif);
-}
-
-.font-mono {
-	font-family: var(--monospace);
-}
-
-.meta {
-	color: var(--text-secondary);
-}
-
-.flex {
-	display: flex;
-}
-
-.flex-col {
-	flex-direction: column;
-}
-
-.flex-gap-1 {
-	gap: 0.5rem;
-}
-
-.flex-gap-2 {
-	gap: 1rem;
-}
-
-.flex-gap-3 {
-	gap: 1.5rem;
-}
-
-.flex-gap-4 {
-	gap: 2rem;
 }
 
 /* Misc */
@@ -176,10 +136,10 @@ h5,
 	max-width: var(--container-max-width);
 	margin: 0 auto;
 	padding: 0 2rem;
-}
 
-.container-lg {
-	max-width: var(--container-lg-max-width);
+	.is-lg {
+		max-width: var(--container-lg-max-width);
+	}
 }
 
 /* Modified from:  https://dannyguo.medium.com/animated-multiline-link-underlines-with-css-abe07f3d6aee */
@@ -214,110 +174,4 @@ nav a.is-active {
 .rt.no-highlight a:hover,
 .rt.no-highlight a:focus {
 	background-size: 0% 100%;
-}
-
-/* Rich text */
-
-.rt > * + * {
-	margin-top: 2.5rem;
-}
-
-.rt h2 + *,
-.rt h3 + *,
-.rt h4 + *,
-.rt h5 + *,
-.rt h6 + * {
-	margin-top: 1.5rem;
-}
-
-.rt h2,
-.rt .h2 {
-	margin-top: 2rem;
-}
-
-.rt h3,
-.rt .h3 {
-	margin-top: 1.5rem;
-}
-
-.rt ul > li + li,
-.rt ol > li + li {
-	margin-top: 0.5rem;
-}
-
-.rt figure {
-	margin-top: 2rem;
-}
-
-.rt figure + figure {
-	margin-top: 3rem;
-}
-
-/* Layout */
-
-/* Components */
-
-figure {
-	position: relative;
-	padding-bottom: 3rem;
-}
-
-@media screen and (min-width: 60rem) {
-	figure {
-		margin-left: -4rem;
-		margin-right: -4rem;
-	}
-}
-
-figure div {
-	position: relative;
-}
-
-figure div::before {
-	content: "";
-	display: block;
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: -1rem;
-	bottom: -1rem;
-	border: 1px solid var(--border);
-	border-top: 0;
-	border-bottom: 0;
-	user-select: none;
-	pointer-events: none;
-}
-
-figure div::after {
-	content: "";
-	display: block;
-	position: absolute;
-	left: -1rem;
-	right: -1rem;
-	top: 0;
-	bottom: 0;
-	border: 1px solid var(--border);
-	border-left: 0;
-	border-right: 0;
-	user-select: none;
-	pointer-events: none;
-}
-
-figure img {
-	position: relative;
-	width: 100%;
-}
-
-figure figcaption {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 3rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-family: var(--monospace);
-	font-size: var(--text-sm);
-	color: var(--text-secondary);
 }

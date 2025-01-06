@@ -53,7 +53,8 @@
     <?= css([
         'assets/css/fonts.css',
         'assets/css/reset.css',
-        'assets/css/styles.css',
+        'assets/css/base.css',
+        'assets/css/components.css',
         '@auto'
     ]) ?>
 </head>
