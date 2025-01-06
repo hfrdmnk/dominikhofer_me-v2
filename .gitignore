@@ -30,6 +30,7 @@ Icon
 # ---------------
 /kirby
 /vendor
+/node_modules
 
 # -------------SECURITY-------------
 # NEVER publish these files via Git!

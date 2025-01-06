@@ -1,0 +1,29 @@
+{
+	"name": "dominikhofer_me-v2",
+	"version": "1.0.0",
+	"description": "My always-in-progress home on the internet. Version 2.",
+	"scripts": {
+		"serve": "concurrently \"npm run serve-php\" \"npm run sync\"",
+		"serve-php": "php -S localhost:8000 kirby/router.php &> /dev/null",
+		"sync": "node browsersync.js"
+	},
+	"devDependencies": {
+		"browser-sync": "^3.0.3",
+		"concurrently": "^9.1.2"
+	},
+    "browserSync": {
+		"proxy": "localhost:8000",
+		"watch": [
+			"assets",
+			"content",
+			"site/snippets",
+			"site/templates",
+			"site/blueprints",
+			"site/languages"
+		],
+		"ignore": [
+			"**/.lock",
+			"**/.DS_Store"
+		]
+	}
+}
