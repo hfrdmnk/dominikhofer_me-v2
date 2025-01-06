@@ -5,10 +5,8 @@
 
 <body>
     <?php snippet('navbar') ?>
-    <div class="container flex flex-col flex-gap-4">
-        <h1><?= $page->title() ?></h1>
-        <div><a href="/">Back to home</a></div>
-    </div>
+
+    <?php snippet('header') ?>
 
     <div class="container">
         <div class="rt">

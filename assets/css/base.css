@@ -123,6 +123,12 @@ h5,
 	font-size: var(--text-base);
 }
 
+b,
+strong {
+	font-weight: 500;
+	color: var(--headings);
+}
+
 .text-lg {
 	font-size: var(--text-md);
 }

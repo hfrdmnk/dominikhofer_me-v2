@@ -40,12 +40,49 @@ Component Styles
 	}
 }
 
+/* Header */
+
+header {
+	padding-top: 4rem;
+	padding-bottom: 2rem;
+
+	.header__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.header__title-bar {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.header__slug {
+		font-family: var(--monospace);
+		font-size: var(--text-sm);
+		color: var(--text-secondary);
+	}
+
+	.tag__bar {
+		margin-top: 1rem;
+	}
+
+	.header__lead p:first-child {
+		font-weight: 500;
+	}
+}
+
 /* Regular Components */
 
 /* Rich text */
 .rt {
 	> * + * {
 		margin-top: 2.5rem;
+	}
+
+	p + p {
+		margin-top: 1rem;
 	}
 
 	h2 + *,
@@ -138,4 +175,79 @@ figure {
 		font-size: var(--text-sm);
 		color: var(--text-secondary);
 	}
+}
+
+/* Tags */
+
+.tag__bar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.tag__bar:not(:has(.tag)) {
+	display: none;
+}
+
+.tag {
+	display: inline-block;
+	position: relative;
+	background-color: var(--bg-secondary);
+	font-family: var(--monospace);
+	font-size: var(--text-sm);
+	padding: 0.25rem 0.5rem;
+	user-select: none;
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: -0.5rem;
+		bottom: -0.5rem;
+		border: 1px solid var(--border);
+		border-top: 0;
+		border-bottom: 0;
+		user-select: none;
+		pointer-events: none;
+	}
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		left: -0.5rem;
+		right: -0.5rem;
+		top: 0;
+		bottom: 0;
+		border: 1px solid var(--border);
+		border-left: 0;
+		border-right: 0;
+		user-select: none;
+		pointer-events: none;
+	}
+}
+
+/* Home hover effect */
+[data-hover-word] {
+	transition: all 0.3s ease-in-out;
+
+	.ampersand {
+		font-family: var(--serif);
+		font-style: italic;
+	}
+}
+
+[data-hover-group]:has([data-hover-word]:hover) [data-hover-word] {
+	opacity: 0.25;
+}
+
+[data-hover-group]:has([data-hover-word="curious"]:hover)
+	[data-hover-word="curious"],
+[data-hover-group]:has([data-hover-word="creative"]:hover)
+	[data-hover-word="creative"],
+[data-hover-group]:has([data-hover-word="coder"]:hover)
+	[data-hover-word="coder"] {
+	opacity: 1;
 }
