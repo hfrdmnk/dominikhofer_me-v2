@@ -4,6 +4,42 @@ Component Styles
 
 /* Layout components */
 
+/* Navbar */
+
+.navbar {
+	.navbar__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem 0;
+	}
+
+	.navbar__logo {
+		height: 2.5rem;
+		width: 2.5rem;
+		color: var(--headings);
+	}
+
+	.navbar__menu {
+		list-style: none;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.navbar__menu-link {
+		font-family: var(--monospace);
+		font-size: var(--text-sm);
+		color: var(--text-secondary);
+		text-decoration: none;
+
+		&.is-active,
+		&:hover {
+			color: color-mix(in srgb, var(--accent), var(--mix-color) 60%);
+		}
+	}
+}
+
 /* Regular Components */
 
 /* Rich text */

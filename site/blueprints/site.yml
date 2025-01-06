@@ -16,6 +16,9 @@ tabs:
                     description:
                         type: textarea
                         buttons: false
+                    navPages:
+                        type: pages
+                        label: Navigation Pages
 
             sidebar:
                 width: 1/3

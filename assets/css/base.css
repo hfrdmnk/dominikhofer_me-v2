@@ -137,7 +137,7 @@ h5,
 	margin: 0 auto;
 	padding: 0 2rem;
 
-	.is-lg {
+	&.is-lg {
 		max-width: var(--container-lg-max-width);
 	}
 }
