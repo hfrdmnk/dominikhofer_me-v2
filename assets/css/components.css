@@ -94,12 +94,19 @@ header {
 
 /* Rich text */
 .rt {
-	> * + * {
+	> * + *:not(p, ul, ol) {
 		margin-top: 2.5rem;
 	}
 
-	p + p {
+	p {
 		margin-top: 1rem;
+	}
+
+	ul,
+	ol {
+		+ p {
+			margin-top: 1.5rem;
+		}
 	}
 
 	h2 + *,
@@ -117,7 +124,7 @@ header {
 
 	ul,
 	ol {
-		margin-top: 1rem;
+		margin-top: 1.5rem;
 		padding-left: 0;
 	}
 
