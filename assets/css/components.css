@@ -73,6 +73,23 @@ header {
 	}
 }
 
+/* Main */
+.regular-page .rt {
+	h2,
+	.h2 {
+		margin-top: 3rem;
+		font-family: var(--monospace);
+		color: color-mix(in srgb, var(--border), var(--mix-color) 30%);
+		font-weight: 300;
+		font-size: var(--text-base);
+	}
+
+	h2 + *,
+	.h2 + * {
+		margin-top: 1rem;
+	}
+}
+
 /* Regular Components */
 
 /* Rich text */
@@ -98,9 +115,18 @@ header {
 		margin-top: 2rem;
 	}
 
-	ul > li + li,
-	ol > li + li {
+	ul,
+	ol {
+		margin-top: 1rem;
+		padding-left: 0;
+	}
+
+	li + li {
 		margin-top: 0.5rem;
+	}
+
+	ul li::marker {
+		color: color-mix(in srgb, var(--border), var(--mix-color) 30%);
 	}
 
 	figure {
@@ -174,6 +200,7 @@ figure {
 		font-family: var(--monospace);
 		font-size: var(--text-sm);
 		color: var(--text-secondary);
+		user-select: none;
 	}
 }
 

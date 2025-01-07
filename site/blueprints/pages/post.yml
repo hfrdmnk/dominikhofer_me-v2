@@ -16,10 +16,11 @@ columns:
     main:
         width: 2/3
         sections:
-            content:
+            page:
                 type: fields
                 fields:
-                    content:
+                    pageContent:
+                        label: Content
                         type: textarea
                         buttons:
                             - file
@@ -30,7 +31,6 @@ columns:
                 type: files
                 multiple: true
                 layout: table
-                template: image
                 query: page.images
                 empty: No images attached yet.
                 columns:

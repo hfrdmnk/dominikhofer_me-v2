@@ -28,6 +28,15 @@
                 <?php endif ?>
                 <?= $page->lead()->kt() ?>
             </div>
+
+            <?php if ($page->visual()->isNotEmpty()): ?>
+                <figure class="header__image">
+                    <div><img src="<?= $page->visual()->toFile()->url() ?>" alt="<?= $page->visual()->toFile()->alt() ?>"></div>
+                    <?php if ($page->visual()->toFile()->caption()->isNotEmpty()): ?>
+                        <figcaption><?= $page->visual()->toFile()->caption() ?></figcaption>
+                    <?php endif ?>
+                </figure>
+            <?php endif ?>
         </div>
     </div>
 </header>
