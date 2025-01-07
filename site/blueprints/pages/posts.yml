@@ -1,8 +1,6 @@
 title: Posts
 
 tabs:
-    page:
-        extends: pages/default
     posts:
         label: Posts
         columns:
@@ -26,3 +24,6 @@ tabs:
                         extends: sections/posts
                         label: Published
                         status: listed
+
+    page:
+        extends: pages/default

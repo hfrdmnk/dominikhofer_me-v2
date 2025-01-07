@@ -1,5 +1,7 @@
 <?php
 
+use Kirby\Toolkit\Str;
+
 return [
     'debug' => str_ends_with($_SERVER['SERVER_NAME'] ?? '', '.test') || @$_SERVER['SERVER_NAME'] === 'localhost', // enable debug for domains that end on ".test"
     'routes' => [
@@ -42,4 +44,27 @@ return [
         ]
     ],
     'sitemap.ignore' => ['error'],
+    'panel' => [
+        'menu' => [
+            'site' => [
+                // Prevent site from being highlighted when viewing posts
+                'current' => function (string $current): bool {
+                    $path = Kirby\Cms\App::instance()->path();
+                    return $current === 'site' && !Str::contains($path, 'pages/posts');
+                }
+            ],
+            'settings',
+            'posts' => [
+                'icon'  => 'document',
+                'label' => 'Posts',
+                'link'  => 'pages/posts',
+                'current' => function (string $current): bool {
+                    $path = Kirby\Cms\App::instance()->path();
+                    return Str::contains($path, 'pages/posts');
+                }
+            ],
+            'users',
+            'system'
+        ]
+    ]
 ];
