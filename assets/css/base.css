@@ -16,7 +16,7 @@ Base Styles
 	/* Type scale */
 	/* https://www.fluid-type-scale.com/calculate?minFontSize=16&minWidth=400&minRatio=1.125&maxFontSize=18&maxWidth=1280&maxRatio=1.25&steps=sm,base,md,lg,xl,xxl,xxxl&baseStep=base&prefix=text&useContainerWidth=false&includeFallbacks=false&useRems=true&remValue=16&decimals=2&previewFont=Inter&previewText=Almost+before+we+knew+it,+we+had+left+the+ground&previewWidth=1280 */
 	--text-sm: clamp(0.89rem, 0.02vi + 0.88rem, 0.9rem);
-	--text-base: 1rem;
+	--text-base: clamp(1rem, 0.23vi + 0.94rem, 1.13rem);
 	--text-md: clamp(1.13rem, 0.51vi + 1rem, 1.41rem);
 	--text-lg: clamp(1.27rem, 0.89vi + 1.04rem, 1.76rem);
 	--text-xl: clamp(1.42rem, 1.41vi + 1.07rem, 2.2rem);
@@ -75,6 +75,7 @@ Base Styles
 body {
 	background-color: var(--bg);
 	font-family: var(--sans-serif);
+	font-size: var(--text-base);
 	font-weight: 300;
 	color: var(--text);
 }
