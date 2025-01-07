@@ -25,8 +25,8 @@ Base Styles
 
 	/* Layout */
 	--default-spacing: 1rem;
-	--container-max-width: 40rem;
-	--container-lg-max-width: calc(var(--container-max-width) * 2);
+	--container-max-width: 48rem;
+	--container-lg-max-width: 80rem;
 
 	/* Colors */
 	--bg: #fafaf9;
