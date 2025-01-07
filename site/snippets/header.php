@@ -24,7 +24,7 @@
             <div class="header__lead rt">
                 <?php if ($page == $site->homePage()): ?>
                     <p>That’s me, Dominik :)</p>
-                    <p><span data-hover-word="curious">I like to learn <span class="ampersand">&</span> understand more about the world we live in. </span><span data-hover-word="creative">While coming up with cool ideas & designing beautiful things. </span><span data-hover-word="coder">And bringing them to life with fancy symbols.</span></p>
+                    <p><span data-hover-word="curious">I like to learn <span class="ampersand">&</span> understand more about the world we live in. </span><span data-hover-word="creative">While coming up with cool ideas <span class="ampersand">&</span> designing beautiful things. </span><span data-hover-word="coder">And bringing them to life with fancy symbols.</span></p>
                 <?php endif ?>
                 <?= $page->lead()->kt() ?>
             </div>

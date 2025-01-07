@@ -49,9 +49,11 @@
         <script defer data-domain="dominikhofer.me" src="https://analytics.linea.studio/js/script.js"></script>
     <?php endif ?>
 
+    <!-- Loading fonts inline -->
+    <?php snippet('fonts') ?>
+
     <!-- CSS -->
     <?= css([
-        'assets/css/fonts.css',
         'assets/css/reset.css',
         'assets/css/base.css',
         'assets/css/components.css',
