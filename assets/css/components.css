@@ -142,6 +142,19 @@ header {
 	}
 }
 
+/* Footer */
+footer {
+	.footer__symbols {
+		padding: 4rem 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+		color: var(--text-secondary);
+		user-select: none;
+	}
+}
+
 /* Regular Components */
 
 /* Rich text */
