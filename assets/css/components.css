@@ -20,6 +20,11 @@ Component Styles
 		width: 2.5rem;
 		color: var(--headings);
 		flex-shrink: 0;
+		transition: all 0.3s ease-in-out;
+
+		&:hover {
+			color: var(--accent);
+		}
 	}
 
 	nav {
@@ -71,10 +76,18 @@ Component Styles
 		font-size: var(--text-sm);
 		color: var(--text-secondary);
 		text-decoration: none;
+		transition: all 0.3s ease-in-out;
 
 		&.is-active,
 		&:hover {
 			color: color-mix(in srgb, var(--accent), var(--mix-color) 60%);
+		}
+	}
+
+	&:has(.navbar__menu-link:hover, .navbar__logo:hover) {
+		.navbar__menu-link:not(:hover),
+		.navbar__logo:not(:hover) {
+			opacity: 0.5;
 		}
 	}
 }
