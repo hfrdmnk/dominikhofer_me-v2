@@ -57,6 +57,7 @@
         'assets/css/reset.css',
         'assets/css/base.css',
         'assets/css/components.css',
+        'assets/css/tabler-icons.css',
         '@auto'
     ]) ?>
 </head>

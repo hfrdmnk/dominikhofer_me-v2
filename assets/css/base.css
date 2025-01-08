@@ -15,6 +15,7 @@ Base Styles
 
 	/* Type scale */
 	/* https://www.fluid-type-scale.com/calculate?minFontSize=16&minWidth=400&minRatio=1.125&maxFontSize=18&maxWidth=1280&maxRatio=1.25&steps=sm,base,md,lg,xl,xxl,xxxl&baseStep=base&prefix=text&useContainerWidth=false&includeFallbacks=false&useRems=true&remValue=16&decimals=2&previewFont=Inter&previewText=Almost+before+we+knew+it,+we+had+left+the+ground&previewWidth=1280 */
+	--text-xs: clamp(0.79rem, -0.13vi + 0.82rem, 0.72rem);
 	--text-sm: clamp(0.89rem, 0.02vi + 0.88rem, 0.9rem);
 	--text-base: clamp(1rem, 0.23vi + 0.94rem, 1.13rem);
 	--text-md: clamp(1.13rem, 0.51vi + 1rem, 1.41rem);
@@ -37,6 +38,12 @@ Base Styles
 	--border: #e7e5e4;
 	--accent: #ace2af;
 	--mix-color: #000;
+
+	--sky: #0ea5e9;
+	--indigo: #6366f1;
+	--green: #22c55e;
+	--blue: #3b82f6;
+	--orange: #f97316;
 }
 
 /* Dark mode */
@@ -72,6 +79,10 @@ Base Styles
 }
 
 /* Base styles */
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background-color: var(--bg);
 	font-family: var(--sans-serif);
