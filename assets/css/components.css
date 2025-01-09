@@ -87,7 +87,8 @@ Component Styles
 	&:has(.navbar__menu-link:hover, .navbar__logo:hover) {
 		.navbar__menu-link:not(:hover),
 		.navbar__logo:not(:hover) {
-			opacity: 0.5;
+			opacity: 0.75;
+			filter: blur(4px);
 		}
 	}
 }
@@ -449,7 +450,7 @@ figure {
 
 /* Home hover effect */
 [data-hover-word] {
-	transition: opacity 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 
 	.ampersand {
 		font-family: var(--serif);
@@ -458,7 +459,8 @@ figure {
 }
 
 [data-hover-group]:has([data-hover-word]:hover) [data-hover-word] {
-	opacity: 0.25;
+	opacity: 0.75;
+	filter: blur(4px);
 }
 
 [data-hover-group]:has([data-hover-word="curious"]:hover)
@@ -468,4 +470,96 @@ figure {
 [data-hover-group]:has([data-hover-word="coder"]:hover)
 	[data-hover-word="coder"] {
 	opacity: 1;
+	filter: none;
+}
+
+/* Blocks */
+
+/* Posts */
+
+aside.b-posts {
+	position: relative;
+	background-color: var(--bg-secondary);
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+
+	@media screen and (min-width: 60rem) {
+		margin-left: -1rem;
+		margin-right: -1rem;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: -1rem;
+		bottom: -1rem;
+		border-left: 1px solid var(--border);
+		border-right: 1px solid var(--border);
+		user-select: none;
+		pointer-events: none;
+	}
+
+	&::after {
+		top: 0;
+		bottom: 0;
+		left: -1rem;
+		right: -1rem;
+		border: 0;
+		border-top: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
+	}
+
+	h3 {
+		font-family: var(--monospace);
+		font-size: var(--text-sm);
+		font-weight: inherit;
+		color: var(--text-secondary);
+		position: absolute;
+		bottom: calc(100% + 0.25rem);
+		left: 1rem;
+	}
+
+	&:has(a:hover) {
+		a:not(:hover) {
+			opacity: 0.25;
+		}
+	}
+
+	article {
+		&:not(:last-child) {
+			border-bottom: 1px solid var(--border);
+		}
+	}
+
+	a {
+		text-decoration: none;
+		transition: all 0.3s ease-in-out;
+		display: block;
+		padding: 0.75rem 1rem;
+	}
+
+	h4 {
+		font-size: var(--text-base);
+	}
+
+	.b-posts__meta {
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+		margin-top: 0.25rem;
+	}
+
+	i {
+		color: var(--yellow);
+	}
+
+	time {
+		font-family: var(--monospace);
+		font-size: var(--text-xs);
+		color: var(--text-secondary);
+	}
 }
