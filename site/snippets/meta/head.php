@@ -2,7 +2,7 @@
     <!-- Global Metadata -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="<?= $page->url() ?>/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="<?= $site->url() ?>/favicon.svg" />
     <meta name="generator" content="Kirby CMS" />
 
     <!-- Canonical URL -->
