@@ -2,7 +2,7 @@
     <div class="container is-lg">
         <div class="navbar__wrapper">
             <a href="<?= $site->url() ?>" class="navbar__logo">
-                <?php @snippet('logo'); ?>
+                <?php @snippet('blocks/logo'); ?>
             </a>
 
             <nav>

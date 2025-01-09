@@ -16,6 +16,23 @@ columns:
                     pageContent:
                         label: Content
                         type: blocks
+                        pretty: true
+                        fieldsets:
+                            - markdown
+                            - image
+                            - type: posts
+                              preview: fields
+                              wysiwyg: true
+                              icon: book
+                              fields:
+                                  selection:
+                                      type: select
+                                      label: Select which posts to display
+                                      default: favorites
+                                      options:
+                                          favorites: Favorites
+                                          latest: Latest
+                                      required: true
             images:
                 type: files
                 multiple: true

@@ -50,7 +50,7 @@
     <?php endif ?>
 
     <!-- Loading fonts inline -->
-    <?php snippet('fonts') ?>
+    <?php snippet('meta/fonts') ?>
 
     <!-- CSS -->
     <?= css([

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php snippet('head') ?>
+<?php snippet('meta/head') ?>
 
 <body>
-    <?php snippet('navbar') ?>
+    <?php snippet('layout/navbar') ?>
 
-    <?php snippet('header') ?>
+    <?php snippet('layout/header') ?>
 
     <main class="<?= $page->parent() != 'post' ? 'regular-page' : '' ?>">
         <div class="container">
@@ -16,7 +16,7 @@
         </div>
     </main>
 
-    <?php snippet('footer') ?>
+    <?php snippet('layout/footer') ?>
 </body>
 
 </html>
