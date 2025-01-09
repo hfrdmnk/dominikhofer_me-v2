@@ -28,9 +28,9 @@ columns:
                                   selection:
                                       type: select
                                       label: Select which posts to display
-                                      default: favorites
+                                      default: featured
                                       options:
-                                          favorites: Favorites
+                                          featured: Featured
                                           latest: Latest
                                       required: true
             images:

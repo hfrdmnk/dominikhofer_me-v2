@@ -3,11 +3,11 @@ $selection = $block->selection()->value();
 $featuredPosts = $kirby->collection('posts')->filterBy('featured', 'true')->shuffle()->limit(3)->sort('date', 'desc');
 $latestPosts = $kirby->collection('posts')->sort('date', 'desc')->limit(3);
 
-$posts = $selection == 'favorites' ? $featuredPosts : $latestPosts;
+$posts = $selection == 'featured' ? $featuredPosts : $latestPosts;
 ?>
 
 <aside class="b-posts">
-    <h3><?= $selection == 'favorites' ? "Handpicked favorites" : "Latest posts" ?></h3>
+    <h3><?= $selection == 'featured' ? "Handpicked favorites" : "Latest posts" ?></h3>
     <?php foreach ($posts as $post): ?>
         <article>
             <a class="no-highlight" href="<?= $post->url() ?>">
