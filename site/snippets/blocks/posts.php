@@ -1,6 +1,6 @@
 <?php
 $selection = $block->selection()->value();
-$featuredPosts = $kirby->collection('posts')->filterBy('featured', 'true')->shuffle()->limit(3);
+$featuredPosts = $kirby->collection('posts')->filterBy('featured', 'true')->shuffle()->limit(3)->sort('date', 'desc');
 $latestPosts = $kirby->collection('posts')->sort('date', 'desc')->limit(3);
 
 $posts = $selection == 'favorites' ? $featuredPosts : $latestPosts;
