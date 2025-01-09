@@ -45,11 +45,6 @@ columns:
                 time: true
                 default: now
                 required: true
-            manuallastupdate:
-                label: Manual Last Update
-                type: date
-                time: true
-                help: Is overwritten by the last update of the content, if that happened after this date.
             featured:
                 type: toggle
                 label: Featured

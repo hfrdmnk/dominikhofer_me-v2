@@ -1,6 +1,6 @@
 type: pages
 label: Posts
-info: "{{ page.date.toDate('d.m.Y') }}"
+info: "{{ page.featured.isTrue()  ? '★' : '' }} {{ page.date.toDate('d.m.Y') }}"
 template: post
 empty: No posts yet
 sortBy: date desc
