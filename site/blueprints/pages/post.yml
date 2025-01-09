@@ -24,6 +24,7 @@ columns:
                         type: textarea
                         buttons:
                             - file
+                            - link
                         files: page.images
                         uploads: false
                         required: true
