@@ -5,10 +5,10 @@ Base Styles
 /* CSS variables */
 :root {
 	/* Fonts */
-	--sans-serif: "Switzer", "Inter", ui-sans-serif, system-ui, sans-serif,
+	--sans-serif: "Inter", ui-sans-serif, system-ui, sans-serif,
 		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
 		"Noto Color Emoji";
-	--serif: "Sentient", ui-serif, Georgia, Cambria, "Times New Roman", Times,
+	--serif: "EB Garamond", ui-serif, Georgia, Cambria, "Times New Roman", Times,
 		serif;
 	--monospace: "Space Grotesk", SFMono-Regular, Menlo, Monaco, Consolas,
 		"Liberation Mono", "Courier New", monospace;
@@ -17,7 +17,8 @@ Base Styles
 	/* https://www.fluid-type-scale.com/calculate?minFontSize=16&minWidth=400&minRatio=1.125&maxFontSize=18&maxWidth=1280&maxRatio=1.25&steps=sm,base,md,lg,xl,xxl,xxxl&baseStep=base&prefix=text&useContainerWidth=false&includeFallbacks=false&useRems=true&remValue=16&decimals=2&previewFont=Inter&previewText=Almost+before+we+knew+it,+we+had+left+the+ground&previewWidth=1280 */
 	--text-xs: clamp(0.79rem, -0.13vi + 0.82rem, 0.72rem);
 	--text-sm: clamp(0.89rem, 0.02vi + 0.88rem, 0.9rem);
-	--text-base: clamp(1rem, 0.23vi + 0.94rem, 1.13rem);
+	--text-base: 1rem;
+	/* --text-base: clamp(1rem, 0.23vi + 0.94rem, 1.13rem); */
 	--text-md: clamp(1.13rem, 0.51vi + 1rem, 1.41rem);
 	--text-lg: clamp(1.27rem, 0.89vi + 1.04rem, 1.76rem);
 	--text-xl: clamp(1.42rem, 1.41vi + 1.07rem, 2.2rem);
@@ -104,7 +105,7 @@ h5,
 .h5,
 h6,
 .h6 {
-	font-weight: 500;
+	font-weight: 600;
 	color: var(--headings);
 	margin: 0;
 }
@@ -113,7 +114,7 @@ h1,
 .h1 {
 	font-family: var(--serif);
 	font-size: var(--text-xxl);
-	font-weight: 700;
+	font-weight: 800;
 }
 
 h2,

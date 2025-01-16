@@ -5,7 +5,7 @@
                 <div class="header__slug">/<?= $page == $site->homePage() ? '' : $page->slug() ?></div>
 
                 <?php if ($page == $site->homepage()): ?>
-                    <h1><span data-hover-word="curious">Curious. </span><span data-hover-word="creative">Creative.
+                    <h1 class="home-title"><span data-hover-word="curious">Curious. </span><span data-hover-word="creative">Creative.
                         </span><span data-hover-word="coder">Coder.</span></h1>
                 <?php else: ?>
                     <h1><?= $page->h1()->isNotEmpty() ? $page->h1() : $page->title() ?></h1>

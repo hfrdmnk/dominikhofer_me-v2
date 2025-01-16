@@ -87,8 +87,8 @@ Component Styles
 	&:has(.navbar__menu-link:hover, .navbar__logo:hover) {
 		.navbar__menu-link:not(:hover),
 		.navbar__logo:not(:hover) {
-			opacity: 0.75;
-			filter: blur(4px);
+			opacity: 0.25;
+			/* filter: blur(4px); */
 		}
 	}
 }
@@ -115,6 +115,10 @@ header {
 		font-family: var(--monospace);
 		font-size: var(--text-sm);
 		color: var(--text-secondary);
+	}
+
+	.home-title {
+		font-style: italic;
 	}
 
 	.tag__bar {
@@ -459,8 +463,8 @@ figure {
 }
 
 [data-hover-group]:has([data-hover-word]:hover) [data-hover-word] {
-	opacity: 0.75;
-	filter: blur(4px);
+	opacity: 0.25;
+	/* filter: blur(4px); */
 }
 
 [data-hover-group]:has([data-hover-word="curious"]:hover)
