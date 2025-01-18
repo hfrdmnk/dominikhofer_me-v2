@@ -13,6 +13,7 @@ columns:
                         type: textarea
                         buttons:
                             - link
+                            - bold
                     pageContent:
                         label: Content
                         type: blocks
@@ -33,6 +34,10 @@ columns:
                                           featured: Featured
                                           latest: Latest
                                       required: true
+                            - type: posts-archive
+                              preview: fields
+                              wysiwyg: true
+                              icon: book
             images:
                 type: files
                 multiple: true
