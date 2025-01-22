@@ -157,6 +157,10 @@ strong {
 	margin: 0 auto;
 	padding: 0 2rem;
 
+	&.is-md {
+		max-width: calc(var(--container-max-width) + 8rem);
+	}
+
 	&.is-lg {
 		max-width: var(--container-lg-max-width);
 	}
