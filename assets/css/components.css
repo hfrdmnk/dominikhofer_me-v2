@@ -149,15 +149,19 @@ header {
 .regular-page .rt {
 	h2,
 	.h2 {
-		margin-top: 3rem;
 		font-family: var(--monospace);
 		color: color-mix(in srgb, var(--border), var(--mix-color) 30%);
 		font-weight: 300;
 		font-size: var(--text-base);
 	}
 
-	h2 + *,
-	.h2 + * {
+    > h2,
+    > .h2 {
+		margin-top: 3rem;
+    }
+
+	> h2 + *,
+	> .h2 + * {
 		margin-top: 1rem;
 	}
 }
@@ -510,6 +514,7 @@ figure {
     h2 {
 		display: flex;
 		justify-content: space-between;
+        margin-top: 1rem;;
 	}
 }
 
