@@ -21,9 +21,10 @@ Component Styles
 		color: var(--headings);
 		flex-shrink: 0;
 		transition: all 0.3s ease-in-out;
+        transform-origin: bottom center;
 
 		&:hover {
-			color: var(--accent);
+			animation: wave 1s infinite;
 		}
 	}
 
@@ -91,6 +92,20 @@ Component Styles
 			/* filter: blur(4px); */
 		}
 	}
+}
+
+@keyframes wave {
+    0%, 50%, 100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(15deg);
+    }
+
+    40% {
+        transform: rotate(-5deg);
+    }
 }
 
 /* Header */
@@ -291,36 +306,36 @@ footer {
 
 /* Rich text */
 .rt {
-	> * + *:not(p, ul, ol) {
+	> * + *:not(p, ul, ol, aside, section) {
 		margin-top: 2.5rem;
 	}
 
-	p {
+	> p {
 		margin-top: 1rem;
 	}
 
-	ul,
-	ol {
+	> ul,
+	> ol {
 		+ p {
 			margin-top: 1.5rem;
 		}
 	}
 
-	h2 + *,
-	h3 + *,
-	h4 + *,
-	h5 + *,
-	h6 + * {
+	> h2 + *,
+	> h3 + *,
+	> h4 + *,
+	> h5 + *,
+	> h6 + * {
 		margin-top: 1.5rem;
 	}
 
-	h2,
-	.h2 {
+	> h2,
+	> .h2 {
 		margin-top: 2rem;
 	}
 
-	ul,
-	ol {
+	> ul,
+	> ol {
 		margin-top: 1.5rem;
 		padding-left: 0;
 	}
@@ -329,15 +344,15 @@ footer {
 		margin-top: 0.5rem;
 	}
 
-	ul li::marker {
+	> ul li::marker {
 		color: color-mix(in srgb, var(--border), var(--mix-color) 30%);
 	}
 
-	figure {
+	> figure {
 		margin-top: 2rem;
 	}
 
-	figure + figure {
+	> figure + figure {
 		margin-top: 3rem;
 	}
 }
@@ -481,7 +496,8 @@ figure {
 
 /* Posts Archive */
 
-.posts-archive {
+.posts-archive,
+.posts-preview {
 	display: grid;
 	gap: 2rem;
 
@@ -495,6 +511,12 @@ figure {
 		display: flex;
 		justify-content: space-between;
 	}
+}
+
+.posts-preview {
+    gap: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
 /* Post Item */
@@ -581,9 +603,8 @@ figure {
 	}
 }
 
-/* Posts */
-
-aside.b-posts {
+/* Slash Pages */
+.slash-pages {
 	position: relative;
 	background-color: var(--bg-secondary);
 	margin-top: 3rem;
@@ -644,7 +665,8 @@ aside.b-posts {
 	a {
 		text-decoration: none;
 		transition: all 0.3s ease-in-out;
-		display: block;
+		display: grid;
+        gap: 0.5rem;
 		padding: 0.75rem 1rem;
 	}
 
@@ -652,20 +674,8 @@ aside.b-posts {
 		font-size: var(--text-base);
 	}
 
-	.b-posts__meta {
-		display: flex;
-		align-items: center;
-		gap: 0.25rem;
-		margin-top: 0.25rem;
-	}
-
-	i {
-		color: var(--yellow);
-	}
-
-	time {
-		font-family: var(--monospace);
-		font-size: var(--text-xs);
-		color: var(--text-secondary);
-	}
+    p {
+        font-size: var(--text-xs);
+        color: var(--text-secondary);
+    }
 }

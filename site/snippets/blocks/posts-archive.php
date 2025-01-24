@@ -9,7 +9,7 @@ foreach ($posts as $post) {
 }
 ?>
 
-<aside class="posts-archive">
+<section class="posts-archive">
     <?php foreach ($groupedPosts as $year => $months): ?>
         <?php
         $monthKeys = array_keys($months);
@@ -34,4 +34,4 @@ foreach ($posts as $post) {
             </section>
         <?php endforeach; ?>
     <?php endforeach; ?>
-    </ul>
+</section>

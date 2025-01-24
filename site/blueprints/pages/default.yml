@@ -21,7 +21,7 @@ columns:
                         fieldsets:
                             - markdown
                             - image
-                            - type: posts
+                            - type: posts-preview
                               preview: fields
                               wysiwyg: true
                               icon: book
@@ -38,6 +38,10 @@ columns:
                               preview: fields
                               wysiwyg: true
                               icon: book
+                            - type: slash-pages
+                              preview: fields
+                              wysiwyg: true
+                              icon: file
             images:
                 type: files
                 multiple: true
