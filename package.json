@@ -3,10 +3,10 @@
 	"version": "1.0.0",
 	"description": "My always-in-progress home on the internet. Version 2.",
 	"scripts": {
-		"serve": "concurrently \"npm run serve-php\" \"npm run sync\"",
+		"serve": "concurrently \"npm run tailwind\" \"npm run serve-php\" \"npm run sync\"",
+		"tailwind": "npx @tailwindcss/cli -i ./assets/css/tailwind.css  -o ./assets/css/styles.css --watch",
 		"serve-php": "php -S localhost:8000 kirby/router.php &> /dev/null",
-		"sync": "node browsersync.js",
-		"watch": "npx @tailwindcss/cli -i ./src/css/styles.css -o ./assets/css/styles.css --watch"
+		"sync": "node browsersync.js"
 	},
 	"devDependencies": {
 		"browser-sync": "^3.0.3",
