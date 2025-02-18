@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php snippet('meta/head') ?>
+<?php snippet("meta/head"); ?>
 
 <body>
-    <?php snippet('layout/navbar') ?>
+    <?php snippet("layout/navbar"); ?>
 
-    <?php snippet('layout/header') ?>
+    <?php snippet("layout/header"); ?>
 
-    <main class="<?= $page->parent() != 'post' ? 'regular-page' : '' ?>">
+    <main class="<?= $page->parent() != "post" ? "regular-page" : "" ?>">
         <div class="container">
             <div class="rt">
                 <?= $page->pageContent()->toBlocks() ?>
@@ -16,7 +16,7 @@
         </div>
     </main>
 
-    <?php snippet('layout/footer') ?>
+    <?php snippet("layout/footer"); ?>
 </body>
 
 </html>
