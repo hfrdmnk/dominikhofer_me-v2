@@ -21,9 +21,8 @@ return function ($site) {
         ) {
             foreach ($data['response']['statuses'] as $status) {
                 $statuses[] = [
-                    'content' => $status['emoji'].' '.$status['content'],
                     'date' => date('Y-m-d H:i', $status['created']),
-                    'type' => 'status',
+                    'status' => $status['emoji'] . ' ' . $status['content'],
                 ];
             }
         }
