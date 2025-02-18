@@ -22,7 +22,7 @@ return function ($site) {
             foreach ($data['response']['statuses'] as $status) {
                 $statuses[] = [
                     'date' => date('Y-m-d H:i', $status['created']),
-                    'status' => $status['emoji'] . ' ' . $status['content'],
+                    'status' => $status['emoji'].' '.$status['content'],
                 ];
             }
         }
