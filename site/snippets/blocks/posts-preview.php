@@ -7,14 +7,14 @@ $posts = $selection == 'featured' ? $featuredPosts : $latestPosts;
 ?>
 
 <section class="posts-preview">
-    <?php foreach ($posts as $post): ?>
+    <?php foreach ($posts as $post) { ?>
         <article class="post-item">
             <a class="no-highlight" href="<?= $post->url() ?>">
-                <time><?= $post->date()->toDate("d.m.Y") ?></time>
+                <time><?= $post->date()->toDate('d.m.Y') ?></time>
                 <div class="post-item__content">
                     <h3><?= $post->title() ?></h3>
                 </div>
             </a>
         </article>
-    <?php endforeach; ?>
+    <?php } ?>
 </section>

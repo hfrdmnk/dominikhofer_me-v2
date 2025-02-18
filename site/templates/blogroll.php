@@ -1,12 +1,12 @@
 <main>
     <h1><?= $page->title() ?></h1>
 
-    <?php if ($hasFeeds): ?>
-        <?php foreach ($feeds as $category => $categoryFeeds): ?>
+    <?php if ($hasFeeds) { ?>
+        <?php foreach ($feeds as $category => $categoryFeeds) { ?>
             <section>
                 <h2><?= $category ?></h2>
                 <ul>
-                    <?php foreach ($categoryFeeds as $feed): ?>
+                    <?php foreach ($categoryFeeds as $feed) { ?>
                         <li>
                             <a href="<?= $feed['htmlUrl'] ?>">
                                 <?= $feed['title'] ?>
@@ -15,11 +15,11 @@
                                 <a href="<?= $feed['xmlUrl'] ?>">RSS</a>
                             </small>
                         </li>
-                    <?php endforeach ?>
+                    <?php } ?>
                 </ul>
             </section>
-        <?php endforeach ?>
-    <?php else: ?>
+        <?php } ?>
+    <?php } else { ?>
         <p class="message"><?= $message ?></p>
-    <?php endif ?>
+    <?php } ?>
 </main>

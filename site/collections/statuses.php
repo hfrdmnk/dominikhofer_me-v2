@@ -1,7 +1,7 @@
 <?php
 
 return function ($site) {
-    $url = "https://api.omg.lol/address/dominikhofer/statuses/";
+    $url = 'https://api.omg.lol/address/dominikhofer/statuses/';
 
     try {
         $response = @file_get_contents($url);
@@ -16,14 +16,14 @@ return function ($site) {
 
         $statuses = [];
         if (
-            $data["request"]["success"] &&
-            !empty($data["response"]["statuses"])
+            $data['request']['success'] &&
+            ! empty($data['response']['statuses'])
         ) {
-            foreach ($data["response"]["statuses"] as $status) {
+            foreach ($data['response']['statuses'] as $status) {
                 $statuses[] = [
-                    "content" => $status["emoji"] . " " . $status["content"],
-                    "date" => date("Y-m-d H:i", $status["created"]),
-                    "type" => "status",
+                    'content' => $status['emoji'].' '.$status['content'],
+                    'date' => date('Y-m-d H:i', $status['created']),
+                    'type' => 'status',
                 ];
             }
         }

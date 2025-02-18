@@ -5,13 +5,13 @@ Base Styles
 /* CSS variables */
 :root {
 	/* Fonts */
-	--sans-serif: "Inter", ui-sans-serif, system-ui, sans-serif,
-		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-		"Noto Color Emoji";
-	--serif: "EB Garamond", ui-serif, Georgia, Cambria, "Times New Roman", Times,
-		serif;
-	--monospace: "Space Grotesk", SFMono-Regular, Menlo, Monaco, Consolas,
-		"Liberation Mono", "Courier New", monospace;
+	--sans-serif:
+		'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol', 'Noto Color Emoji';
+	--serif: 'EB Garamond', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+	--monospace:
+		'Space Grotesk', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+		monospace;
 
 	/* Type scale */
 	/* https://www.fluid-type-scale.com/calculate?minFontSize=16&minWidth=400&minRatio=1.125&maxFontSize=18&maxWidth=1280&maxRatio=1.25&steps=sm,base,md,lg,xl,xxl,xxxl&baseStep=base&prefix=text&useContainerWidth=false&includeFallbacks=false&useRems=true&remValue=16&decimals=2&previewFont=Inter&previewText=Almost+before+we+knew+it,+we+had+left+the+ground&previewWidth=1280 */
@@ -173,7 +173,8 @@ a:not(.no-highlight, :has(svg), :has(img)) {
 	background-image: linear-gradient(var(--accent), var(--accent));
 	background-repeat: no-repeat;
 	background-size: 0% 100%;
-	transition: background 0.3s ease-in-out,
+	transition:
+		background 0.3s ease-in-out,
 		text-decoration-color 0.1s ease-in-out;
 }
 
@@ -181,11 +182,7 @@ a:not(nav a),
 .rt a {
 	font-weight: 400;
 	text-decoration-style: solid;
-	text-decoration-color: color-mix(
-		in srgb,
-		var(--border),
-		var(--mix-color) 10%
-	);
+	text-decoration-color: color-mix(in srgb, var(--border), var(--mix-color) 10%);
 	text-underline-offset: 4px;
 }
 

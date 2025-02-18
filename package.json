@@ -6,11 +6,26 @@
 		"serve": "concurrently \"npm run tailwind\" \"npm run serve-php\" \"npm run sync\"",
 		"tailwind": "npx @tailwindcss/cli -i ./assets/css/tailwind.css  -o ./assets/css/styles.css --watch",
 		"serve-php": "php -S localhost:8000 kirby/router.php &> /dev/null",
-		"sync": "node browsersync.js"
+		"sync": "node browsersync.js",
+		"prepare": "husky",
+		"format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+		"format:php": "./vendor/bin/pint",
+		"format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+		"format:all": "npm run format && npm run format:php"
+	},
+	"lint-staged": {
+		"**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+			"prettier --write"
+		],
+		"**/*.php": [
+			"./vendor/bin/pint"
+		]
 	},
 	"devDependencies": {
 		"browser-sync": "^3.0.3",
-		"concurrently": "^9.1.2"
+		"concurrently": "^9.1.2",
+		"husky": "^9.1.7",
+		"prettier": "^3.5.1"
 	},
 	"browserSync": {
 		"proxy": "localhost:8000",

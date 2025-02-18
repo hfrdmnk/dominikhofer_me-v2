@@ -1,5 +1,5 @@
 <?php
 
 return function ($site) {
-    return $site->find("links")->children()->listed()->flip();
+    return $site->find('links')->children()->listed()->flip();
 };

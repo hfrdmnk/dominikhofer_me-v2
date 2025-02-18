@@ -4,11 +4,11 @@ return function ($page) {
     $opmlFile = $page->opml()->toFile();
 
     // Return early if no OPML file exists
-    if (!$opmlFile) {
+    if (! $opmlFile) {
         return [
             'feeds' => [],
             'message' => 'No OPML file uploaded yet.',
-            'hasFeeds' => false
+            'hasFeeds' => false,
         ];
     }
 
@@ -20,7 +20,7 @@ return function ($page) {
             return [
                 'feeds' => [],
                 'message' => 'Could not parse OPML file.',
-                'hasFeeds' => false
+                'hasFeeds' => false,
             ];
         }
 
@@ -28,16 +28,16 @@ return function ($page) {
 
         // Parse the OPML file
         foreach ($xml->body->outline as $category) {
-            $categoryName = (string)$category['text'];
+            $categoryName = (string) $category['text'];
             $feeds[$categoryName] = [];
 
             foreach ($category->outline as $feed) {
                 $feeds[$categoryName][] = [
-                    'title' => (string)$feed['title'],
-                    'xmlUrl' => (string)$feed['xmlUrl'],
-                    'htmlUrl' => (string)$feed['htmlUrl'],
-                    'text' => (string)$feed['text'],
-                    'type' => (string)$feed['type']
+                    'title' => (string) $feed['title'],
+                    'xmlUrl' => (string) $feed['xmlUrl'],
+                    'htmlUrl' => (string) $feed['htmlUrl'],
+                    'text' => (string) $feed['text'],
+                    'type' => (string) $feed['type'],
                 ];
             }
 
@@ -50,13 +50,13 @@ return function ($page) {
         return [
             'feeds' => $feeds,
             'message' => '',
-            'hasFeeds' => true
+            'hasFeeds' => true,
         ];
     } catch (Exception $e) {
         return [
             'feeds' => [],
-            'message' => 'Error processing OPML file: ' . $e->getMessage(),
-            'hasFeeds' => false
+            'message' => 'Error processing OPML file: '.$e->getMessage(),
+            'hasFeeds' => false,
         ];
     }
 };

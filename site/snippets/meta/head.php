@@ -13,16 +13,16 @@
       ? $page->seoTitle()
       : ($page->h1()->isNotEmpty()
         ? $page->h1()
-        : $page->title())) .
-      " | " .
+        : $page->title())).
+      ' | '.
       $site->shortTitle() ?></title>
     <meta name="title"
         content="<?= ($page->seoTitle()->isNotEmpty()
           ? $page->seoTitle()
           : ($page->h1()->isNotEmpty()
             ? $page->h1()
-            : $page->title())) .
-          " | " .
+            : $page->title())).
+          ' | '.
           $site->shortTitle() ?>" />
     <meta name="description" content="<?= $page->description() ?>" />
 
@@ -34,8 +34,8 @@
           ? $page->seoTitle()
           : ($page->h1()->isNotEmpty()
             ? $page->h1()
-            : $page->title())) .
-          " | " .
+            : $page->title())).
+          ' | '.
           $site->shortTitle() ?>" />
     <meta property="og:description" content="<?= $page->description() ?>" />
     <meta property="og:image" content="<?= $page->url() ?>/og-image" />
@@ -55,17 +55,17 @@
     <link rel="sitemap" href="<?= $site->url() ?>/sitemap.xml" />
 
     <!-- Plausible Analytics -->
-    <?php if (option("debug") === false): ?>
+    <?php if (option('debug') === false) { ?>
         <script defer data-domain="dominikhofer.me" src="https://analytics.linea.studio/js/script.js"></script>
-    <?php endif; ?>
+    <?php } ?>
 
     <!-- Loading fonts inline -->
-    <?php snippet("meta/fonts"); ?>
+    <?php snippet('meta/fonts'); ?>
 
     <!-- CSS -->
     <?= css([
-      "assets/css/tabler-icons.css",
-      "assets/css/styles.css",
-      "@auto",
+        'assets/css/tabler-icons.css',
+        'assets/css/styles.css',
+        '@auto',
     ]) ?>
 </head>

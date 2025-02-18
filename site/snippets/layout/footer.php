@@ -18,7 +18,7 @@
         <div class="footer__divider"></div>
         <div class="footer__bar">
             <a href="#top" class="no-highlight btt"><i class="ti ti-arrow-up"></i><span class="visually-hidden">Back to top</span></a>
-            <p>Made with 💚 and (too much) 🧉 from 2023 to <?= date('Y');  ?> by me.</p>
+            <p>Made with 💚 and (too much) 🧉 from 2023 to <?= date('Y'); ?> by me.</p>
             <a href="https://people.pledge.party/" target="_blank">People Pledge</a>
         </div>
     </div>

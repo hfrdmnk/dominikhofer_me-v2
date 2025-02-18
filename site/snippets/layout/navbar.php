@@ -14,13 +14,13 @@
                     </li>
                     <?php
                     $navPages = $site->navPages()->toPages();
-                    foreach ($navPages as $navPage): ?>
+            foreach ($navPages as $navPage) { ?>
                         <li class="navbar__menu-item">
                             <a href="<?= $navPage->url() ?>" class="navbar__menu-link <?= $page->url() === $navPage->url() ? 'is-active' : '' ?>">
                                 /<?= $navPage->slug() ?>
                             </a>
                         </li>
-                    <?php endforeach ?>
+                    <?php } ?>
                 </ul>
             </nav>
         </div>

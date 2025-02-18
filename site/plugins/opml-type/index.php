@@ -5,6 +5,6 @@ Kirby::plugin('hfrdmnk/opml-type', [
         'opml' => [
             'mime' => ['application/xml', 'text/x-opml', 'text/xml'],
             'type' => 'document',
-        ]
-    ]
+        ],
+    ],
 ]);

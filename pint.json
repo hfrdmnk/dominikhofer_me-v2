@@ -1,0 +1,10 @@
+{
+	"preset": "laravel",
+	"rules": {
+		"align_multiline_comment": true,
+		"array_indentation": true,
+		"array_syntax": true,
+		"blank_line_after_namespace": true
+	},
+	"exclude": ["/kirby"]
+}
